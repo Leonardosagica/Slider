@@ -1,0 +1,118 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+section {
+	position: relative;
+	width: 100%;
+	height: 70vh;
+}
+
+.slider {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.slider__item {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
+}
+.slider__item.active {
+	opacity: 1;
+}
+.slider__item.active .slider__content {
+	opacity: 1;
+	transform: translateX(648px);
+	transition: all 1s ease-in-out 300ms;
+}
+.slider__item:nth-child(1) {
+	background: url('img01.jpg') no-repeat center top/cover;
+}
+.slider__item:nth-child(2) {
+	background: url('img02.jpg') no-repeat center top/cover;
+}
+.slider__item:nth-child(3) {
+	background: url('img03.jpg') no-repeat center top/cover;
+}
+.slider__content {
+	position: absolute;
+	bottom: 25px;
+	left: -600px;
+	opacity: 0;
+	width: 600px;
+	padding: 2rem;
+}
+@media (max-width: 991px) {
+	.slider__content {
+		left: -650px;
+	}
+}
+.slider__content h1 {
+	font-family: 'Marcellus', serif;
+	font-size: 4.236rem;
+	font-weight: 400;
+	color: red;
+	margin: 0.5rem 0 1rem;
+}
+.slider__content p {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 0.618rem;
+	font-weight: 300;
+	letter-spacing: 7px;
+	text-transform: uppercase;
+	color: red;
+}
+.slider__content a {
+	display: inline-block;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	letter-spacing: 1px;
+	font-size: 0.618rem;
+	text-transform: uppercase;
+	color: red;
+	background-color: transparent;
+	border: 1px solid red;
+	padding: 0.875rem 3.275rem;
+}
+.slider__btns {
+	position: absolute;
+	bottom: 25px;
+	right: 0;
+	width: 300px;
+	height: 100px;
+}
+
+.btns__wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.btns__wrapper .btns__left,
+.btns__wrapper .btns__right {
+	width: 50px;
+	height: 50px;
+	fill: none !important;
+	stroke: currentColor;
+}
+.btns__wrapper #next {
+	position: absolute;
+	top: 25%;
+	right: 115px;
+	stroke: red;
+	cursor: pointer;
+}
+.btns__wrapper #prev {
+	position: absolute;
+	top: 25%;
+	left: 50px;
+	stroke: red;
+	cursor: pointer;
+}
